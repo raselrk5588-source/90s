@@ -1,0 +1,573 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>৯০ এর শিশু চেকলিস্ট</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23E4574D'/%3E%3Ctext x='50' y='67' font-family='Arial, sans-serif' font-size='45' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3E90%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atma:wght@500;700&family=Hind+Siliguri:wght@400;500;600&display=swap">
+<style>
+/* Layout: one ruled notebook sheet with a red margin line (light) that becomes a blackboard (dark). Boldness lives in the grade stamp. */
+:root {
+  --desk: #E6ECF4;
+  --sheet: #FDFEFF;
+  --rule: #C3D6EE;
+  --margin: #E4574D;
+  --ink: #1A2B52;
+  --muted: #55658A;
+  --accent: #2A4FD6;
+  --on-accent: #FFFFFF;
+  --hl: #FFE66D;
+  --font-display: 'Atma', 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  --font-body: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --desk: #0E1511;
+    --sheet: #1B2922;
+    --rule: #34493E;
+    --margin: #F08A7E;
+    --ink: #EEF0E6;
+    --muted: #A9B8AD;
+    --accent: #F5D76E;
+    --on-accent: #1B2922;
+    --hl: #6A5E1F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --desk: #0E1511;
+  --sheet: #1B2922;
+  --rule: #34493E;
+  --margin: #F08A7E;
+  --ink: #EEF0E6;
+  --muted: #A9B8AD;
+  --accent: #F5D76E;
+  --on-accent: #1B2922;
+  --hl: #6A5E1F;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-inline: 16px;
+  padding-block: 0 56px;
+}
+.wrap { max-width: 640px; margin-inline: auto; }
+button { font: inherit; color: inherit; }
+button:focus-visible, .item:focus-within { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Sticky counter */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--sheet); border-bottom: 2px solid var(--rule);
+  margin-inline: -16px; padding: 8px 16px 10px;
+}
+.bar-in { max-width: 640px; margin-inline: auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.count { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.meter { flex: 1 1 120px; height: 8px; border-radius: 4px; background: var(--rule); overflow: hidden; min-width: 0; }
+.meter i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width .2s; }
+.jump { background: none; border: 0; padding: 4px 0; color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Header */
+.head { padding-block: 26px 14px; }
+.kicker { margin: 0; font-size: .85rem; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 11vw, 4rem); line-height: 1.2; margin: 4px 0 6px; text-wrap: balance; }
+.lead { margin: 0; color: var(--muted); font-size: 1.1rem; max-width: 30rem; }
+
+/* Memory album: grey until ticked, then full colour */
+.album { background: var(--sheet); border-radius: 10px; padding: 14px 10px 12px; margin: 6px 0 26px; box-shadow: 0 1px 0 var(--rule), 0 8px 22px rgba(10, 20, 40, .08); }
+.albumhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 0 4px 10px; }
+.albumhead h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1.3; margin: 0; }
+.albumcount { font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.agrid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+.tile { display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; border-radius: 12px; cursor: pointer; min-width: 0; }
+.tile svg { display: block; width: 100%; height: auto; filter: grayscale(1); opacity: .3; transition: filter .25s, opacity .25s; }
+.tile[aria-pressed="true"] svg { filter: none; opacity: 1; }
+.tile.pop svg { animation: pop .35s ease; }
+@keyframes pop { 0% { transform: scale(.85); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+.albumcap { min-height: 3.3em; margin: 10px 4px 0; color: var(--muted); font-size: .95rem; }
+
+/* Ruled sheet */
+.sheet { position: relative; background: var(--sheet); border-radius: 6px; padding: 6px 14px 18px 56px; box-shadow: 0 1px 0 var(--rule), 0 8px 22px rgba(10, 20, 40, .08); }
+.sheet::before { content: ''; position: absolute; left: 46px; top: 0; bottom: 0; width: 2px; background: var(--margin); opacity: .85; }
+.sec { padding-top: 16px; }
+.sec h2 { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; line-height: 1.3; margin: 0; padding-bottom: 2px; }
+.mark { font-size: 1rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.items { list-style: none; margin: 0; padding: 0; }
+.item { position: relative; display: block; min-height: 3rem; padding: 10px 0 8px; border-bottom: 1.5px solid var(--rule); cursor: pointer; line-height: 1.5; }
+.item input { position: absolute; left: -46px; top: 12px; width: 26px; height: 26px; margin: 0; appearance: none; -webkit-appearance: none; border: 2px solid var(--muted); border-radius: 6px; background: var(--sheet); cursor: pointer; }
+.item input:checked { border-color: var(--accent); background: var(--accent); }
+.item input:checked::after { content: ''; position: absolute; left: 7px; top: 1px; width: 7px; height: 14px; border: solid var(--on-accent); border-width: 0 3px 3px 0; transform: rotate(40deg); }
+.txt { padding: 0 2px; }
+.item input:checked + .txt { background: linear-gradient(transparent 52%, var(--hl) 52%); }
+
+/* Report card */
+.report { margin-top: 30px; background: var(--sheet); border: 4px double var(--ink); border-radius: 6px; padding: 18px 16px 20px; }
+.report h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; margin: 0; }
+.rsub { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+.rtable { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.rtable th, .rtable td { text-align: left; padding: 6px 4px; border-bottom: 1.5px solid var(--rule); }
+.rtable th { font-size: .82rem; color: var(--muted); font-weight: 600; }
+.rtable td:last-child, .rtable th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.rtable tfoot td { font-weight: 600; border-bottom: 0; }
+.verdict { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+.stamp {
+  flex: none; width: 96px; height: 96px; border-radius: 50%; border: 4px solid var(--margin); color: var(--margin);
+  display: grid; place-items: center; text-align: center; transform: rotate(-9deg);
+  font-family: var(--font-display); font-weight: 700; font-size: 2.3rem; line-height: 1;
+}
+.stamp small { display: block; font-family: var(--font-body); font-size: .72rem; font-weight: 600; margin-top: 2px; }
+.remark { flex: 1 1 200px; min-width: 0; margin: 0; font-size: 1.1rem; }
+.remark b { display: block; font-size: .82rem; color: var(--muted); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.btn { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 10px; padding: 11px 20px; font-weight: 600; font-size: 1rem; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--rule); }
+.status { min-height: 1.6em; margin: 8px 0 0; color: var(--accent); font-weight: 600; font-size: .95rem; }
+.shareout { width: 100%; margin-top: 10px; font: inherit; padding: 10px 12px; border: 1.5px solid var(--rule); border-radius: 10px; background: var(--sheet); color: var(--ink); resize: none; }
+.cardbox { margin-top: 18px; }
+.cardimg { display: block; width: 100%; max-width: 440px; height: auto; border-radius: 6px; border: 1.5px solid var(--rule); background: #FDFEFF; }
+.hint { margin: 8px 0 0; font-size: .85rem; color: var(--muted); }
+.foot { margin: 22px 0 0; font-size: .85rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .meter i, .tile svg { transition: none; } .tile.pop svg { animation: none; } }
+</style>
+
+<main class="wrap">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="tile"><rect x="1" y="1" width="62" height="62" rx="14"/></clipPath></defs></svg>
+  <div class="bar">
+    <div class="bar-in">
+      <span class="count" id="count">০ / ৪০</span>
+      <div class="meter" aria-hidden="true"><i id="fill"></i></div>
+      <button class="jump" id="jumpBtn" type="button">রিপোর্ট কার্ড</button>
+    </div>
+  </div>
+
+  <header class="head">
+    <p class="kicker">স্মৃতির খাতা</p>
+    <h1>৯০ এর শিশু</h1>
+    <p class="lead">যা যা মনে আছে, টিক দাও। ধূসর ছবিগুলো একটা একটা করে রঙিন হবে, শেষে পাবে স্কুলের মতো প্রগতি পত্র।</p>
+    <div style="margin-top: 15px;">
+      <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2F90s.smritilife.com&label=Total%20Visitors&labelColor=%2355658A&countColor=%23E4574D" alt="Realtime Visitor Count" style="border-radius: 4px;">
+    </div>
+  </header>
+
+  <section class="album" aria-labelledby="albumTitle">
+    <div class="albumhead"><h2 id="albumTitle">স্মৃতির অ্যালবাম</h2><span class="albumcount" id="albumCount"></span></div>
+    <div class="agrid" id="agrid"></div>
+    <p class="albumcap" id="albumCap" aria-live="polite"></p>
+  </section>
+
+  <div class="sheet" id="sheet"></div>
+
+  <section class="report" id="report" aria-live="polite">
+    <h2>প্রগতি পত্র</h2>
+    <p class="rsub">বিষয়: শৈশবের স্মৃতি &nbsp;·&nbsp; পূর্ণমান ৪০</p>
+    <table class="rtable">
+      <thead><tr><th>বিষয়</th><th>প্রাপ্ত নম্বর</th></tr></thead>
+      <tbody id="rRows"></tbody>
+      <tfoot><tr><td>মোট</td><td id="rTotal"></td></tr></tfoot>
+    </table>
+    <div class="verdict">
+      <div class="stamp" id="stamp" aria-hidden="true"></div>
+      <p class="remark"><b>শ্রেণি শিক্ষকের মন্তব্য</b><span id="rRemark"></span></p>
+    </div>
+    <div class="actions">
+      <button class="btn" id="makeCardBtn" type="button">শেয়ার কার্ড বানাও</button>
+      <button class="btn ghost" id="copyBtn" type="button">লেখা কপি করো</button>
+      <button class="btn ghost" id="resetBtn" type="button">সব মুছে নতুন করে</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+    <div class="cardbox" id="cardBox" hidden>
+      <img class="cardimg" id="cardImg" alt="প্রগতি পত্র আর রঙিন অ্যালবামের ছবি" width="1080" height="1350">
+      <div class="actions">
+        <button class="btn" id="dlPng" type="button">PNG ডাউনলোড</button>
+        <button class="btn ghost" id="dlJpg" type="button">JPG ডাউনলোড</button>
+      </div>
+      <p class="hint">ডাউনলোড না চললে ছবিটা চেপে ধরে "ছবি সেভ করো" দাও।</p>
+    </div>
+    <textarea class="shareout" id="shareOut" rows="7" readonly hidden aria-label="শেয়ারের লেখা"></textarea>
+  </section>
+
+  <p class="foot">তোমার টিক এই ব্রাউজারেই থাকে, কোথাও পাঠানো হয় না। গ্রেড বাংলাদেশের জিপিএ-৫ পদ্ধতিতে।</p>
+</main>
+
+<script>
+(function () {
+  var SECTIONS = [
+    { name: 'খেলাধুলা', items: [
+      'লাটিম ঘুরিয়ে হাতের তালুতে তোলা',
+      'ঘুড়ি ওড়ানো, আর কাটা ঘুড়ির পেছনে দৌড়',
+      'মার্বেল বা গুলি খেলে পকেট ভর্তি করা',
+      'গোল্লাছুট, কানামাছি বা হাডুডু',
+      'ক্যারাম বোর্ডে পাউডার ছিটিয়ে খেলা',
+      'ভাঙা ব্যাট আর টেপ-মোড়া বলে গলিতে ক্রিকেট',
+      'বৃষ্টিতে ভিজে ফুটবল খেলে বকা খাওয়া',
+      'অন্ধকার না হওয়া পর্যন্ত বন্ধুদের সাথে উঠোনে খেলা'
+    ]},
+    { name: 'খাবারদাবার', items: [
+      'স্কুলের গেটে বরই-আচার বা চটপটি কেনা',
+      'হাওয়াই মিঠাই কিনে হাতে নিয়ে হাঁটা',
+      'কাঠি আইসক্রিম বা দুধ আইসক্রিম',
+      'ঝালমুড়ি আর চানাচুর কাগজের ঠোঙায়',
+      'কাঁচা আম লবণ-মরিচ দিয়ে খাওয়া',
+      'মেলায় জিলাপি বা বাতাসা কেনা',
+      'মায়ের হাতে ভাত মেখে খাওয়া',
+      'লজেন্স নিয়ে ভাইবোনের সাথে ভাগের ঝগড়া'
+    ]},
+    { name: 'ঘরোয়া জীবন', items: [
+      'লোডশেডিংয়ে মোমবাতি বা হারিকেনের আলোয় পড়া',
+      'গরমে ছাদে বা উঠোনে মাদুর পেতে ঘুমানো',
+      'ল্যান্ডফোনে রং নাম্বার বা চুপচাপ কল পাওয়া',
+      'ডাকঘরের চিঠি বা ঈদ কার্ড পাঠানো ও পাওয়া',
+      'ক্যাসেটের ফিতা পেঁচিয়ে গেলে পেন্সিল দিয়ে ঠিক করা',
+      'দোকানে গিয়ে পছন্দের গান ক্যাসেটে ভরিয়ে আনা',
+      'তালপাখা দিয়ে হাওয়া খেয়ে ঘুমিয়ে পড়া',
+      'গরমের ছুটিতে নানা বাড়ি বা দাদা বাড়িতে যাওয়া'
+    ]},
+    { name: 'স্কুল', items: [
+      'কালির কলমে কালি ভরে লেখা',
+      'বই-খাতায় নাম আর ক্লাস রোল লেখা',
+      'টিফিনের ঘণ্টার অপেক্ষায় ঘড়ি দেখা',
+      'হাত পেতে বেত খাওয়া',
+      'বার্ষিক ক্রীড়ায় বিস্কুট দৌড় বা ব্যাঙ লাফ',
+      'পরীক্ষার আগের রাতে সারারাত জেগে মুখস্থ',
+      'শিক্ষক ক্লাসে এলে সবাই উঠে দাঁড়ানো',
+      'বড় ভাইবোনের পুরোনো বই নিয়ে পড়া'
+    ]},
+    { name: 'বিনোদন ও উৎসব', items: [
+      'শুক্রবারের বিটিভি সিনেমার অপেক্ষা',
+      'প্রতিবেশীর বাসায় গিয়ে সবাই মিলে টিভি দেখা',
+      'ভিসিআর বা ক্যাসেটে ভাড়ায় সিনেমা দেখা',
+      'এন্টেনা ঘুরিয়ে টিভির ছবি ঠিক করা',
+      'চাঁদ রাতে নতুন জামা বারবার দেখা',
+      'গ্রামের মেলায় নাগরদোলা আর বাঁশি-বেলুন',
+      'ছোট হাতে ধরা ব্রিক গেম বা ভিডিও গেম পার্লারে খেলা',
+      'পহেলা বৈশাখে নতুন পোশাক পরে মেলায় যাওয়া'
+    ]}
+  ];
+  var PER = 8;
+  var TOTAL = SECTIONS.length * PER;
+  var KEY = 'bd90s-checklist-v1';
+
+  function bn(n) { return String(n).replace(/\d/g, function (d) { return '০১২৩৪৫৬৭৮৯'[d]; }); }
+  function $(id) { return document.getElementById(id); }
+
+  var GRADES = [
+    { min: 32, g: 'A+', gpa: '5.00', note: 'তুমি তো চলন্ত ৯০ এর জাদুঘর। একটাও বাদ যায়নি বললেই চলে।' },
+    { min: 28, g: 'A',  gpa: '4.00', note: 'খাঁটি ৯০ এর শিশু, কোনো সন্দেহ নেই।' },
+    { min: 24, g: 'A-', gpa: '3.50', note: 'অনেক স্মৃতি মনে আছে, কয়েকটা শুধু ভুলে গেছো।' },
+    { min: 20, g: 'B',  gpa: '3.00', note: 'ভালো, তবে নানা বাড়ির গল্প আরও শোনা দরকার।' },
+    { min: 16, g: 'C',  gpa: '2.00', note: 'মোটামুটি। দুই হাজারের দশকের টান একটু বেশি।' },
+    { min: 14, g: 'D',  gpa: '1.00', note: 'পাস করেছো, তবে শৈশবের গল্প আরও জমানো দরকার।' },
+    { min: 0,  g: 'F',  gpa: '0.00', note: 'অকৃতকার্য। বড়দের কাছে গল্প শুনে নতুন করে পরীক্ষা দাও।' }
+  ];
+  function gradeFor(n) { for (var i = 0; i < GRADES.length; i++) if (n >= GRADES[i].min) return GRADES[i]; return GRADES[GRADES.length - 1]; }
+
+  var checked = [];
+  for (var i = 0; i < TOTAL; i++) checked.push(false);
+  try {
+    var saved = localStorage.getItem(KEY);
+    if (saved && saved.length === TOTAL) checked = saved.split('').map(function (c) { return c === '1'; });
+  } catch (e) {}
+
+  var boxes = [], tiles = [], marks = [], shareText = '';
+  var ICONS = [{"bg":"#FFE7C2","body":"<path d=\"M32 10 V20\" stroke=\"#8A5A3B\" stroke-width=\"3\" stroke-linecap=\"round\"/><ellipse cx=\"32\" cy=\"24\" rx=\"16\" ry=\"6\" fill=\"#E4574D\"/><path d=\"M16 24 Q19 40 32 54 Q45 40 48 24 Z\" fill=\"#F59E3B\"/><path d=\"M18 31 Q32 39 46 31\" stroke=\"#FFD25A\" stroke-width=\"3.5\" fill=\"none\"/><path d=\"M24 41 Q32 47 40 41\" stroke=\"#E4574D\" stroke-width=\"3\" fill=\"none\"/><path d=\"M32 54 V59\" stroke=\"#2B2B3A\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M48 22 Q58 22 56 12\" stroke=\"#2B2B3A\" stroke-width=\"1.6\" fill=\"none\"/>"},{"bg":"#DDEBFF","body":"<polygon points=\"32,6 50,26 32,46 14,26\" fill=\"#E4574D\"/><polygon points=\"32,6 50,26 32,26\" fill=\"#FFD25A\"/><polygon points=\"32,26 14,26 32,46\" fill=\"#FFD25A\"/><path d=\"M32 6 V46 M14 26 H50\" stroke=\"#2B2B3A\" stroke-width=\"1.5\"/><path d=\"M32 46 Q25 50 32 54 Q39 58 33 62\" stroke=\"#2B2B3A\" stroke-width=\"1.6\" fill=\"none\"/><path d=\"M31 51 l-5 -2 v5 z M34 58 l5 -2 v5 z\" fill=\"#3B6FD8\"/>"},{"bg":"#E6F6EE","body":"<circle cx=\"25\" cy=\"38\" r=\"14\" fill=\"#3B6FD8\"/><path d=\"M14 36 Q25 26 36 37\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" opacity=\".85\"/><circle cx=\"43\" cy=\"25\" r=\"10\" fill=\"#F59E3B\"/><path d=\"M36 24 Q43 17 50 26\" stroke=\"#fff\" stroke-width=\"2.5\" fill=\"none\" opacity=\".85\"/><circle cx=\"46\" cy=\"46\" r=\"8\" fill=\"#4CAF7A\"/><path d=\"M41 45 Q46 40 51 46\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" opacity=\".85\"/><circle cx=\"19\" cy=\"32\" r=\"2.5\" fill=\"#fff\"/>"},{"bg":"#FDE6EF","body":"<circle cx=\"32\" cy=\"33\" r=\"15\" fill=\"none\" stroke=\"#2B2B3A\" stroke-width=\"2\"/><circle cx=\"32\" cy=\"22\" r=\"6.5\" fill=\"#E4574D\"/><circle cx=\"32\" cy=\"13\" r=\"5\" fill=\"#F2C29B\"/><circle cx=\"49\" cy=\"38\" r=\"6.5\" fill=\"#3B6FD8\"/><circle cx=\"49\" cy=\"29\" r=\"5\" fill=\"#F2C29B\"/><circle cx=\"32\" cy=\"55\" r=\"6.5\" fill=\"#4CAF7A\"/><circle cx=\"32\" cy=\"46\" r=\"5\" fill=\"#F2C29B\"/><circle cx=\"15\" cy=\"38\" r=\"6.5\" fill=\"#F59E3B\"/><circle cx=\"15\" cy=\"29\" r=\"5\" fill=\"#F2C29B\"/>"},{"bg":"#FFF0C9","body":"<rect x=\"9\" y=\"9\" width=\"46\" height=\"46\" rx=\"5\" fill=\"#C98A52\"/><rect x=\"14\" y=\"14\" width=\"36\" height=\"36\" rx=\"2\" fill=\"#F3D9A6\" stroke=\"#8A5A3B\" stroke-width=\"1.5\"/><circle cx=\"32\" cy=\"32\" r=\"7\" fill=\"none\" stroke=\"#E4574D\" stroke-width=\"1.6\"/><circle cx=\"17\" cy=\"17\" r=\"3.8\" fill=\"#2B2B3A\"/><circle cx=\"47\" cy=\"17\" r=\"3.8\" fill=\"#2B2B3A\"/><circle cx=\"17\" cy=\"47\" r=\"3.8\" fill=\"#2B2B3A\"/><circle cx=\"47\" cy=\"47\" r=\"3.8\" fill=\"#2B2B3A\"/><circle cx=\"29\" cy=\"30\" r=\"3\" fill=\"#fff\" stroke=\"#2B2B3A\"/><circle cx=\"35\" cy=\"34\" r=\"3\" fill=\"#2B2B3A\"/><circle cx=\"35\" cy=\"29\" r=\"3\" fill=\"#E4574D\"/><circle cx=\"25\" cy=\"42\" r=\"3.4\" fill=\"#FFD25A\" stroke=\"#2B2B3A\"/>"},{"bg":"#E3F3E3","body":"<g transform=\"rotate(32 34 32)\"><rect x=\"30\" y=\"5\" width=\"8\" height=\"18\" rx=\"3.5\" fill=\"#8A5A3B\"/><path d=\"M25 22 H43 V52 Q43 59 34 59 Q25 59 25 52 Z\" fill=\"#E8C99B\" stroke=\"#8A5A3B\" stroke-width=\"1.6\"/><rect x=\"25\" y=\"38\" width=\"18\" height=\"4\" fill=\"#fff\" opacity=\".9\"/></g><circle cx=\"17\" cy=\"46\" r=\"8\" fill=\"#E4574D\"/><path d=\"M11 44 Q17 48 23 44 M11 49 Q17 53 23 49\" stroke=\"#fff\" stroke-width=\"1.4\" fill=\"none\"/>"},{"bg":"#DCEBFA","body":"<circle cx=\"20\" cy=\"17\" r=\"8\" fill=\"#9AA6B8\"/><circle cx=\"31\" cy=\"13\" r=\"10\" fill=\"#9AA6B8\"/><circle cx=\"43\" cy=\"18\" r=\"8\" fill=\"#9AA6B8\"/><rect x=\"18\" y=\"17\" width=\"32\" height=\"9\" fill=\"#9AA6B8\"/><path d=\"M17 30 l-3 7 M28 30 l-3 7 M39 30 l-3 7 M50 30 l-3 7\" stroke=\"#3B6FD8\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><circle cx=\"32\" cy=\"46\" r=\"11\" fill=\"#fff\" stroke=\"#2B2B3A\" stroke-width=\"2\"/><polygon points=\"32,40 37.7,44.1 35.5,50.9 28.5,50.9 26.3,44.1\" fill=\"#2B2B3A\"/><path d=\"M32 40 V35 M37.7 44.1 L42.5 42.5 M35.5 50.9 L38.5 55.5 M28.5 50.9 L25.5 55.5 M26.3 44.1 L21.5 42.5\" stroke=\"#2B2B3A\" stroke-width=\"1.6\"/>"},{"bg":"#FFD9B8","body":"<path d=\"M10 46 A22 22 0 0 1 54 46 Z\" fill=\"#F59E3B\"/><path d=\"M17 46 A15 15 0 0 1 47 46 Z\" fill=\"#FFD25A\"/><rect x=\"0\" y=\"46\" width=\"64\" height=\"18\" fill=\"#6B8F5A\"/><circle cx=\"22\" cy=\"32\" r=\"4.2\" fill=\"#2B2B3A\"/><path d=\"M16 48 L22 36 L28 48 Z\" fill=\"#2B2B3A\"/><circle cx=\"42\" cy=\"34\" r=\"3.6\" fill=\"#2B2B3A\"/><path d=\"M37 48 L42 38 L47 48 Z\" fill=\"#2B2B3A\"/><path d=\"M26 41 L38 41\" stroke=\"#2B2B3A\" stroke-width=\"1.8\"/>"},{"bg":"#FFE9D6","body":"<path d=\"M10 34 H54 Q52 54 32 54 Q12 54 10 34 Z\" fill=\"#2FA6A0\"/><circle cx=\"22\" cy=\"31\" r=\"6\" fill=\"#D9A55B\"/><circle cx=\"31\" cy=\"27\" r=\"7\" fill=\"#D9A55B\"/><circle cx=\"41\" cy=\"31\" r=\"6\" fill=\"#D9A55B\"/><circle cx=\"32\" cy=\"33\" r=\"6\" fill=\"#C4903F\"/><ellipse cx=\"40\" cy=\"23\" rx=\"7\" ry=\"4.8\" fill=\"#fff\"/><circle cx=\"40\" cy=\"23\" r=\"2.6\" fill=\"#FFD25A\"/><path d=\"M16 29 Q20 22 27 25\" stroke=\"#E4574D\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"26\" cy=\"22\" r=\"2\" fill=\"#4CAF7A\"/><circle cx=\"29\" cy=\"20\" r=\"2\" fill=\"#4CAF7A\"/><circle cx=\"46\" cy=\"28\" r=\"2\" fill=\"#4CAF7A\"/>"},{"bg":"#FFE0F0","body":"<rect x=\"30\" y=\"38\" width=\"4\" height=\"22\" rx=\"2\" fill=\"#E8C99B\"/><circle cx=\"32\" cy=\"24\" r=\"13\" fill=\"#F58CB0\"/><circle cx=\"21\" cy=\"31\" r=\"9.5\" fill=\"#F58CB0\"/><circle cx=\"43\" cy=\"31\" r=\"9.5\" fill=\"#F58CB0\"/><circle cx=\"27\" cy=\"14\" r=\"8\" fill=\"#F58CB0\"/><circle cx=\"38\" cy=\"15\" r=\"8\" fill=\"#F58CB0\"/><circle cx=\"28\" cy=\"22\" r=\"4\" fill=\"#FFB8D2\"/><circle cx=\"40\" cy=\"28\" r=\"3.4\" fill=\"#FFB8D2\"/><circle cx=\"20\" cy=\"30\" r=\"3\" fill=\"#FFB8D2\"/>"},{"bg":"#DFF3FF","body":"<rect x=\"29\" y=\"44\" width=\"6\" height=\"16\" rx=\"3\" fill=\"#E8C99B\"/><path d=\"M17 26 Q17 8 32 8 Q47 8 47 26 V46 H17 Z\" fill=\"#F59E3B\"/><path d=\"M17 30 H47 V38 H17 Z\" fill=\"#FFF6E0\"/><circle cx=\"45\" cy=\"11\" r=\"6\" fill=\"#DFF3FF\"/><path d=\"M23 15 Q24 12 28 12\" stroke=\"#fff\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\" opacity=\".8\"/>"},{"bg":"#FFEFD2","body":"<path d=\"M13 25 H51 L37 59 H27 Z\" fill=\"#E8C99B\" stroke=\"#8A5A3B\" stroke-width=\"1.6\"/><path d=\"M22 25 L30 58 M32 25 V58 M42 25 L34 58\" stroke=\"#C98A52\" stroke-width=\"1.4\"/><circle cx=\"18\" cy=\"22\" r=\"4.2\" fill=\"#fff\" stroke=\"#D9C9A8\"/><circle cx=\"25\" cy=\"18\" r=\"4.6\" fill=\"#fff\" stroke=\"#D9C9A8\"/><circle cx=\"32\" cy=\"16\" r=\"5\" fill=\"#fff\" stroke=\"#D9C9A8\"/><circle cx=\"39\" cy=\"18\" r=\"4.6\" fill=\"#fff\" stroke=\"#D9C9A8\"/><circle cx=\"46\" cy=\"22\" r=\"4.2\" fill=\"#fff\" stroke=\"#D9C9A8\"/><circle cx=\"28\" cy=\"21\" r=\"2\" fill=\"#E4574D\"/><circle cx=\"36\" cy=\"20\" r=\"2\" fill=\"#4CAF7A\"/><circle cx=\"42\" cy=\"22\" r=\"2\" fill=\"#E4574D\"/>"},{"bg":"#E8F7DA","body":"<path d=\"M32 15 C49 15 55 29 49 41 C44 51 30 55 22 47 C11 36 17 15 32 15 Z\" fill=\"#7BC46A\"/><path d=\"M32 15 Q34 9 39 8\" stroke=\"#8A5A3B\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M36 11 Q46 5 51 13 Q43 17 36 11 Z\" fill=\"#4CAF7A\"/><path d=\"M24 26 Q26 19 33 19\" stroke=\"#B8E3A8\" stroke-width=\"3.2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"44\" cy=\"52\" r=\"2.2\" fill=\"#E4574D\"/><circle cx=\"49\" cy=\"54\" r=\"2.2\" fill=\"#fff\"/><circle cx=\"39\" cy=\"55\" r=\"2.2\" fill=\"#fff\"/>"},{"bg":"#FFE9C9","body":"<path d=\"M32 32 a4 4 0 0 1 8 0 a8 8 0 0 1 -16 0 a12 12 0 0 1 24 0 a16 16 0 0 1 -32 0\" fill=\"none\" stroke=\"#F59E3B\" stroke-width=\"5.5\" stroke-linecap=\"round\"/><path d=\"M32 32 a4 4 0 0 1 8 0 a8 8 0 0 1 -16 0 a12 12 0 0 1 24 0 a16 16 0 0 1 -32 0\" fill=\"none\" stroke=\"#FFD25A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>"},{"bg":"#FFF3E3","body":"<ellipse cx=\"32\" cy=\"44\" rx=\"24\" ry=\"10\" fill=\"#fff\" stroke=\"#C98A52\" stroke-width=\"2\"/><ellipse cx=\"32\" cy=\"43\" rx=\"17\" ry=\"6\" fill=\"#F6EEDC\"/><path d=\"M17 42 Q32 12 47 42 Z\" fill=\"#FFFDF5\" stroke=\"#E0D6BF\" stroke-width=\"1.5\"/><path d=\"M25 34 l3 -2 M33 29 l3 2 M30 38 l3 -1\" stroke=\"#E0D6BF\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M24 12 Q20 8 24 4 M32 12 Q28 8 32 4\" stroke=\"#8E98A8\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M52 22 l-6 -6 a3.6 3.6 0 0 1 6 -4.6 a3.6 3.6 0 0 1 6 4.6 z\" fill=\"#E4574D\"/>"},{"bg":"#E9E3FF","body":"<path d=\"M14 38 L5 31 V45 Z\" fill=\"#F58CB0\"/><path d=\"M34 38 L43 31 V45 Z\" fill=\"#F58CB0\"/><circle cx=\"24\" cy=\"38\" r=\"10.5\" fill=\"#E4574D\"/><path d=\"M16 36 Q24 28 32 38\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\"/><path d=\"M42 18 L35 12 V24 Z\" fill=\"#FFD25A\" opacity=\".0\"/><path d=\"M52 19 L60 13 V25 Z\" fill=\"#2FA6A0\"/><path d=\"M38 19 L30 13 V25 Z\" fill=\"#2FA6A0\"/><circle cx=\"45\" cy=\"19\" r=\"8\" fill=\"#3B6FD8\"/><path d=\"M39 18 Q45 12 51 20\" stroke=\"#fff\" stroke-width=\"2.4\" fill=\"none\"/>"},{"bg":"#262C54","body":"<circle cx=\"32\" cy=\"34\" r=\"19\" fill=\"#FFD25A\" opacity=\".22\"/><path d=\"M24 22 Q21 34 26 45 H38 Q43 34 40 22 Z\" fill=\"#FFE9A0\"/><path d=\"M32 27 Q37 34 32 41 Q27 34 32 27 Z\" fill=\"#F59E3B\"/><rect x=\"22\" y=\"45\" width=\"20\" height=\"9\" rx=\"2\" fill=\"#2B2B3A\" stroke=\"#8E98A8\" stroke-width=\"1.5\"/><path d=\"M22 22 H42 L38 16 H26 Z\" fill=\"#2B2B3A\" stroke=\"#8E98A8\" stroke-width=\"1.5\"/><path d=\"M27 16 Q32 4 37 16\" stroke=\"#8E98A8\" stroke-width=\"2.6\" fill=\"none\"/><rect x=\"42\" y=\"30\" width=\"5\" height=\"3\" rx=\"1\" fill=\"#8E98A8\"/>"},{"bg":"#1F2A55","body":"<circle cx=\"20\" cy=\"18\" r=\"9.5\" fill=\"#FFE9A0\"/><circle cx=\"25\" cy=\"15\" r=\"8.5\" fill=\"#1F2A55\"/><circle cx=\"40\" cy=\"14\" r=\"1.6\" fill=\"#FFE9A0\"/><circle cx=\"50\" cy=\"24\" r=\"1.4\" fill=\"#FFE9A0\"/><circle cx=\"34\" cy=\"26\" r=\"1.2\" fill=\"#FFE9A0\"/><circle cx=\"54\" cy=\"10\" r=\"1.2\" fill=\"#FFE9A0\"/><rect x=\"6\" y=\"44\" width=\"52\" height=\"13\" rx=\"3\" fill=\"#C98A52\"/><path d=\"M16 44 V57 M26 44 V57 M36 44 V57 M46 44 V57\" stroke=\"#8A5A3B\" stroke-width=\"1.6\"/><circle cx=\"20\" cy=\"40\" r=\"4.2\" fill=\"#F2C29B\"/><rect x=\"24\" y=\"37.5\" width=\"24\" height=\"6.5\" rx=\"3.2\" fill=\"#E4574D\"/><rect x=\"0\" y=\"57\" width=\"64\" height=\"8\" fill=\"#4A4F6A\"/>"},{"bg":"#E6F0FF","body":"<path d=\"M9 54 L14 35 H50 L55 54 Z\" fill=\"#E4574D\"/><path d=\"M10 30 Q10 17 22 17 H42 Q54 17 54 30 V32 H45 V27 H19 V32 H10 Z\" fill=\"#2B2B3A\"/><circle cx=\"32\" cy=\"44\" r=\"8.6\" fill=\"#fff\"/><circle cx=\"37.5\" cy=\"44\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"34.8\" cy=\"48.8\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"29.2\" cy=\"48.8\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"26.5\" cy=\"44\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"29.2\" cy=\"39.2\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"34.8\" cy=\"39.2\" r=\"1.7\" fill=\"#2B2B3A\"/><circle cx=\"32\" cy=\"44\" r=\"2\" fill=\"#E4574D\"/>"},{"bg":"#FFE6E6","body":"<rect x=\"7\" y=\"17\" width=\"50\" height=\"34\" rx=\"4\" fill=\"#FFF6E0\" stroke=\"#8A5A3B\" stroke-width=\"2\"/><path d=\"M8 19 L32 37 L56 19\" fill=\"none\" stroke=\"#8A5A3B\" stroke-width=\"2\"/><rect x=\"42\" y=\"21\" width=\"11\" height=\"13\" fill=\"#E4574D\"/><rect x=\"44\" y=\"23\" width=\"7\" height=\"9\" fill=\"#FFD25A\"/><circle cx=\"38\" cy=\"31\" r=\"5.5\" fill=\"none\" stroke=\"#3B6FD8\" stroke-width=\"1.6\"/><path d=\"M33 31 H43 M34 28.5 H42 M34 33.5 H42\" stroke=\"#3B6FD8\" stroke-width=\"1\"/><circle cx=\"17\" cy=\"44\" r=\"3.4\" fill=\"#E4574D\"/><circle cx=\"18.6\" cy=\"43\" r=\"2.8\" fill=\"#FFF6E0\"/>"},{"bg":"#E3EDFF","body":"<rect x=\"7\" y=\"14\" width=\"50\" height=\"33\" rx=\"4\" fill=\"#2B2B3A\"/><rect x=\"12\" y=\"18\" width=\"40\" height=\"15\" rx=\"2\" fill=\"#FFF6E0\"/><path d=\"M15 24 H40 M15 29 H33\" stroke=\"#E4574D\" stroke-width=\"2\"/><rect x=\"19\" y=\"36\" width=\"26\" height=\"8\" rx=\"4\" fill=\"#8E98A8\"/><circle cx=\"26\" cy=\"40\" r=\"3.4\" fill=\"#2B2B3A\"/><circle cx=\"38\" cy=\"40\" r=\"3.4\" fill=\"#2B2B3A\"/><circle cx=\"26\" cy=\"40\" r=\"1.2\" fill=\"#fff\"/><circle cx=\"38\" cy=\"40\" r=\"1.2\" fill=\"#fff\"/><path d=\"M36 58 L53 41 L58 46 L41 63 Z\" fill=\"#FFD25A\"/><path d=\"M36 58 L34 63 L41 63 Z\" fill=\"#E8C99B\"/><path d=\"M53 41 L56 38 L61 43 L58 46 Z\" fill=\"#E4574D\"/>"},{"bg":"#FFEBD0","body":"<path d=\"M17 21 V13 H47 V21\" stroke=\"#2B2B3A\" stroke-width=\"3.2\" fill=\"none\"/><rect x=\"6\" y=\"20\" width=\"52\" height=\"32\" rx=\"6\" fill=\"#8E98A8\"/><circle cx=\"19\" cy=\"37\" r=\"10\" fill=\"#2B2B3A\"/><circle cx=\"45\" cy=\"37\" r=\"10\" fill=\"#2B2B3A\"/><circle cx=\"19\" cy=\"37\" r=\"5\" fill=\"#B4BCC9\"/><circle cx=\"45\" cy=\"37\" r=\"5\" fill=\"#B4BCC9\"/><circle cx=\"19\" cy=\"37\" r=\"1.6\" fill=\"#2B2B3A\"/><circle cx=\"45\" cy=\"37\" r=\"1.6\" fill=\"#2B2B3A\"/><rect x=\"26\" y=\"25\" width=\"12\" height=\"11\" rx=\"1.5\" fill=\"#FFF6E0\"/><rect x=\"26\" y=\"40\" width=\"3\" height=\"6\" fill=\"#E4574D\"/><rect x=\"31\" y=\"40\" width=\"3\" height=\"6\" fill=\"#2B2B3A\"/><rect x=\"36\" y=\"40\" width=\"3\" height=\"6\" fill=\"#2B2B3A\"/>"},{"bg":"#FFF3C9","body":"<path d=\"M32 50 L11 26 A27 27 0 0 1 53 26 Z\" fill=\"#E8B764\" stroke=\"#8A5A3B\" stroke-width=\"2\"/><path d=\"M32 50 L18 21 M32 50 L25 16 M32 50 L32 15 M32 50 L39 16 M32 50 L46 21\" stroke=\"#8A5A3B\" stroke-width=\"1.2\"/><path d=\"M14 27 A24.5 24.5 0 0 1 50 27\" fill=\"none\" stroke=\"#E4574D\" stroke-width=\"3\" stroke-dasharray=\"4 3\"/><rect x=\"29\" y=\"49\" width=\"6\" height=\"12\" rx=\"3\" fill=\"#8A5A3B\"/>"},{"bg":"#DFF3E0","body":"<rect x=\"0\" y=\"52\" width=\"64\" height=\"12\" fill=\"#7BC46A\"/><rect x=\"12\" y=\"32\" width=\"32\" height=\"21\" fill=\"#E8C99B\"/><path d=\"M8 34 L28 13 L48 34 Z\" fill=\"#8E98A8\"/><path d=\"M16 31 L28 18 M24 32 L31 25 M32 32 L35 29\" stroke=\"#B4BCC9\" stroke-width=\"2\"/><rect x=\"23\" y=\"40\" width=\"10\" height=\"13\" fill=\"#8A5A3B\"/><path d=\"M55 56 Q52 40 56 27\" stroke=\"#8A5A3B\" stroke-width=\"3.2\" fill=\"none\"/><path d=\"M56 27 Q46 21 42 28 M56 27 Q49 17 43 19 M56 27 Q63 19 59 13 M56 27 Q64 27 62 36\" stroke=\"#4CAF7A\" stroke-width=\"3.2\" fill=\"none\" stroke-linecap=\"round\"/>"},{"bg":"#E4ECFF","body":"<g transform=\"rotate(38 32 32)\"><rect x=\"27\" y=\"4\" width=\"10\" height=\"30\" rx=\"4\" fill=\"#1F2A55\"/><rect x=\"27\" y=\"29\" width=\"10\" height=\"5\" fill=\"#FFD25A\"/><path d=\"M28 34 H36 L32 52 Z\" fill=\"#E8C99B\" stroke=\"#8A5A3B\" stroke-width=\"1.2\"/><path d=\"M32 39 V49\" stroke=\"#2B2B3A\" stroke-width=\"1.2\"/></g><path d=\"M15 44 Q8 53 15 57 Q22 58 22 51 Q21 47 15 44 Z\" fill=\"#3B6FD8\"/><circle cx=\"47\" cy=\"50\" r=\"2\" fill=\"#3B6FD8\"/>"},{"bg":"#FFEAD9","body":"<rect x=\"14\" y=\"7\" width=\"38\" height=\"50\" rx=\"3\" fill=\"#fff\" stroke=\"#3B6FD8\" stroke-width=\"2\"/><path d=\"M20 24 H48 M20 30 H48 M20 36 H48 M20 42 H48 M20 48 H48\" stroke=\"#BCD3EE\" stroke-width=\"1.4\"/><path d=\"M22 7 V57\" stroke=\"#E4574D\" stroke-width=\"1.6\"/><rect x=\"26\" y=\"11\" width=\"22\" height=\"9\" fill=\"#FFF6E0\" stroke=\"#8A5A3B\"/><path d=\"M28 16 q3 -4 6 0 t6 0\" stroke=\"#3B6FD8\" stroke-width=\"1.4\" fill=\"none\"/><circle cx=\"14\" cy=\"16\" r=\"2.4\" fill=\"#2B2B3A\"/><circle cx=\"14\" cy=\"30\" r=\"2.4\" fill=\"#2B2B3A\"/><circle cx=\"14\" cy=\"44\" r=\"2.4\" fill=\"#2B2B3A\"/>"},{"bg":"#FFF4CC","body":"<rect x=\"29\" y=\"5\" width=\"6\" height=\"7\" rx=\"2\" fill=\"#8A5A3B\"/><path d=\"M32 11 Q17 13 17 38 L10 47 H54 L47 38 Q47 13 32 11 Z\" fill=\"#F5B93B\" stroke=\"#B9822A\" stroke-width=\"2\"/><circle cx=\"32\" cy=\"51\" r=\"5\" fill=\"#8A5A3B\"/><path d=\"M25 21 Q23 30 23 36\" stroke=\"#FFE9A0\" stroke-width=\"3.2\" stroke-linecap=\"round\" fill=\"none\"/><path d=\"M52 17 q4 4 0 8 M56 13 q7 8 0 16\" stroke=\"#E4574D\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/>"},{"bg":"#FFE0D6","body":"<ellipse cx=\"30\" cy=\"58\" rx=\"14\" ry=\"2.6\" fill=\"#000\" opacity=\".12\"/><path d=\"M17 17 Q17 6 28 6 Q39 6 39 17 V53\" stroke=\"#8A5A3B\" stroke-width=\"5.5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M17 17 Q17 8 28 8\" stroke=\"#C98A52\" stroke-width=\"1.6\" fill=\"none\"/><path d=\"M47 18 l8 -4 M49 28 h9 M47 38 l8 4\" stroke=\"#E4574D\" stroke-width=\"2.6\" stroke-linecap=\"round\"/>"},{"bg":"#E1F5E4","body":"<path d=\"M32 0 V11\" stroke=\"#2B2B3A\" stroke-width=\"1.6\"/><circle cx=\"32\" cy=\"15\" r=\"6.5\" fill=\"#E8C99B\" stroke=\"#C98A52\" stroke-width=\"1.5\"/><circle cx=\"30\" cy=\"13\" r=\"1\" fill=\"#C98A52\"/><circle cx=\"34\" cy=\"15\" r=\"1\" fill=\"#C98A52\"/><circle cx=\"31\" cy=\"18\" r=\"1\" fill=\"#C98A52\"/><path d=\"M16 48 Q6 52 8 59 L21 57 Z\" fill=\"#4CAF7A\"/><path d=\"M48 48 Q58 52 56 59 L43 57 Z\" fill=\"#4CAF7A\"/><ellipse cx=\"32\" cy=\"44\" rx=\"17\" ry=\"11\" fill=\"#4CAF7A\"/><circle cx=\"23\" cy=\"33\" r=\"6.5\" fill=\"#4CAF7A\"/><circle cx=\"41\" cy=\"33\" r=\"6.5\" fill=\"#4CAF7A\"/><circle cx=\"23\" cy=\"32\" r=\"3.6\" fill=\"#fff\"/><circle cx=\"41\" cy=\"32\" r=\"3.6\" fill=\"#fff\"/><circle cx=\"24\" cy=\"32.6\" r=\"1.8\" fill=\"#2B2B3A\"/><circle cx=\"40\" cy=\"32.6\" r=\"1.8\" fill=\"#2B2B3A\"/><path d=\"M23 44 Q32 50 41 44\" stroke=\"#2B6A47\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/>"},{"bg":"#1F2A55","body":"<circle cx=\"47\" cy=\"14\" r=\"8.5\" fill=\"#FFE9A0\"/><circle cx=\"51\" cy=\"11\" r=\"7.5\" fill=\"#1F2A55\"/><circle cx=\"12\" cy=\"12\" r=\"1.6\" fill=\"#FFE9A0\"/><circle cx=\"24\" cy=\"8\" r=\"1.2\" fill=\"#FFE9A0\"/><circle cx=\"36\" cy=\"16\" r=\"1.2\" fill=\"#FFE9A0\"/><path d=\"M9 31 Q21 26 32 32 V54 Q21 48 9 53 Z\" fill=\"#FFF6E0\"/><path d=\"M55 31 Q43 26 32 32 V54 Q43 48 55 53 Z\" fill=\"#F0E4C6\"/><path d=\"M14 37 Q21 35 27 38 M14 43 Q21 41 27 44 M37 38 Q43 35 50 37 M37 44 Q43 41 50 43\" stroke=\"#8A5A3B\" stroke-width=\"1.4\" fill=\"none\"/><text x=\"17\" y=\"24\" font-size=\"11\" font-weight=\"700\" fill=\"#FFE9A0\" font-family=\"sans-serif\">z</text><text x=\"25\" y=\"19\" font-size=\"8\" font-weight=\"700\" fill=\"#FFE9A0\" font-family=\"sans-serif\">z</text>"},{"bg":"#DFF1E8","body":"<rect x=\"7\" y=\"10\" width=\"50\" height=\"34\" rx=\"3\" fill=\"#2E5B47\" stroke=\"#8A5A3B\" stroke-width=\"3.2\"/><path d=\"M14 19 H34 M14 26 H44 M14 33 H29\" stroke=\"#EEF0E6\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"7\" y=\"44\" width=\"50\" height=\"4.5\" rx=\"1\" fill=\"#8A5A3B\"/><rect x=\"14\" y=\"40\" width=\"11\" height=\"4.5\" rx=\"1\" fill=\"#E4574D\"/><rect x=\"40\" y=\"41.5\" width=\"9\" height=\"3\" rx=\"1.2\" fill=\"#fff\"/><path d=\"M18 56 H46\" stroke=\"#8E98A8\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\".5\"/>"},{"bg":"#FFE4EF","body":"<rect x=\"10\" y=\"41\" width=\"42\" height=\"11\" rx=\"2\" fill=\"#3B6FD8\"/><rect x=\"14\" y=\"30\" width=\"38\" height=\"11\" rx=\"2\" fill=\"#E4574D\"/><rect x=\"11\" y=\"19\" width=\"37\" height=\"11\" rx=\"2\" fill=\"#4CAF7A\"/><rect x=\"15\" y=\"41\" width=\"3\" height=\"11\" fill=\"#FFD25A\"/><rect x=\"19\" y=\"30\" width=\"3\" height=\"11\" fill=\"#FFD25A\"/><rect x=\"16\" y=\"19\" width=\"3\" height=\"11\" fill=\"#FFD25A\"/><path d=\"M12 47 H50\" stroke=\"#fff\" stroke-width=\"1\" opacity=\".5\"/><path d=\"M43 19 V9 L46.5 12.5 L50 9 V19\" fill=\"#FFD25A\"/>"},{"bg":"#E6E1FF","body":"<path d=\"M21 21 L29 7 M43 21 L35 7\" stroke=\"#2B2B3A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"7\" y=\"20\" width=\"50\" height=\"35\" rx=\"6\" fill=\"#8A5A3B\"/><rect x=\"12\" y=\"25\" width=\"31\" height=\"25\" rx=\"5\" fill=\"#2B2B3A\"/><rect x=\"14\" y=\"27\" width=\"27\" height=\"21\" rx=\"3.5\" fill=\"#fff\"/><rect x=\"14\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#E4574D\"/><rect x=\"18.5\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#F59E3B\"/><rect x=\"23\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#FFD25A\"/><rect x=\"27.5\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#4CAF7A\"/><rect x=\"32\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#3B6FD8\"/><rect x=\"36.5\" y=\"27\" width=\"4.5\" height=\"21\" fill=\"#7A4FD8\"/><circle cx=\"50\" cy=\"31\" r=\"2.6\" fill=\"#FFD25A\"/><circle cx=\"50\" cy=\"39\" r=\"2.6\" fill=\"#E8C99B\"/>"},{"bg":"#FFE9D0","body":"<rect x=\"15\" y=\"6\" width=\"34\" height=\"25\" rx=\"4\" fill=\"#8A5A3B\"/><rect x=\"19\" y=\"10\" width=\"26\" height=\"17\" rx=\"3\" fill=\"#6FB6F2\"/><path d=\"M23 23 L29 17 L33 21 L38 15 L42 20\" stroke=\"#fff\" stroke-width=\"1.8\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"13\" cy=\"46\" r=\"6\" fill=\"#3B3B55\"/><rect x=\"5\" y=\"50\" width=\"16\" height=\"16\" rx=\"7\" fill=\"#3B3B55\"/><circle cx=\"32\" cy=\"43\" r=\"7\" fill=\"#2B2B3A\"/><rect x=\"22\" y=\"48\" width=\"20\" height=\"18\" rx=\"8\" fill=\"#2B2B3A\"/><circle cx=\"51\" cy=\"47\" r=\"5.6\" fill=\"#4A3B3B\"/><rect x=\"44\" y=\"51\" width=\"14\" height=\"15\" rx=\"6.5\" fill=\"#4A3B3B\"/>"},{"bg":"#E4E8F2","body":"<rect x=\"5\" y=\"15\" width=\"54\" height=\"34\" rx=\"3\" fill=\"#2B2B3A\"/><rect x=\"11\" y=\"19\" width=\"42\" height=\"15\" fill=\"#FFF6E0\"/><rect x=\"11\" y=\"19\" width=\"42\" height=\"5\" fill=\"#E4574D\"/><path d=\"M15 29.5 H36\" stroke=\"#2B2B3A\" stroke-width=\"2\"/><rect x=\"19\" y=\"37\" width=\"26\" height=\"9\" rx=\"2\" fill=\"#6B6F7F\"/><circle cx=\"26\" cy=\"41.5\" r=\"3.4\" fill=\"#EEE\"/><circle cx=\"38\" cy=\"41.5\" r=\"3.4\" fill=\"#EEE\"/><circle cx=\"26\" cy=\"41.5\" r=\"1.2\" fill=\"#2B2B3A\"/><circle cx=\"38\" cy=\"41.5\" r=\"1.2\" fill=\"#2B2B3A\"/>"},{"bg":"#D9ECFF","body":"<rect x=\"30\" y=\"12\" width=\"3.4\" height=\"46\" fill=\"#5B6577\"/><rect x=\"13\" y=\"15\" width=\"37\" height=\"3.2\" rx=\"1.6\" fill=\"#2B2B3A\"/><rect x=\"16\" y=\"23\" width=\"31\" height=\"3.2\" rx=\"1.6\" fill=\"#2B2B3A\"/><rect x=\"19\" y=\"31\" width=\"25\" height=\"3.2\" rx=\"1.6\" fill=\"#2B2B3A\"/><rect x=\"22\" y=\"39\" width=\"19\" height=\"3.2\" rx=\"1.6\" fill=\"#2B2B3A\"/><path d=\"M54 16 q6 6 0 12 M58 11 q11 11 0 22\" stroke=\"#3B6FD8\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"0\" y=\"55\" width=\"64\" height=\"9\" fill=\"#8E98A8\"/><path d=\"M8 14 q5 -6 10 0\" stroke=\"#fff\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\".8\"/>"},{"bg":"#1F2A55","body":"<circle cx=\"17\" cy=\"17\" r=\"9.5\" fill=\"#FFE9A0\"/><circle cx=\"22\" cy=\"14\" r=\"8.5\" fill=\"#1F2A55\"/><path d=\"M31 9 l2 4.4 4.8 .6 -3.5 3.4 .9 4.8 -4.2 -2.3 -4.2 2.3 .9 -4.8 -3.5 -3.4 4.8 -.6 z\" fill=\"#FFE9A0\" transform=\"translate(-4 -2) scale(.8)\"/><path d=\"M47 24 V19 q0 -5 4.5 -5\" stroke=\"#C98A52\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M35 29 L44 24 Q47.5 28.5 51 24 L60 29 L58 38 L54 36 V58 H40 V36 L36 38 Z\" fill=\"#F58CB0\"/><path d=\"M44 24 Q47.5 31 51 24\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"47.5\" cy=\"35\" r=\"1.3\" fill=\"#fff\"/><circle cx=\"47.5\" cy=\"41\" r=\"1.3\" fill=\"#fff\"/><path d=\"M40 52 H54\" stroke=\"#fff\" stroke-width=\"2\"/>"},{"bg":"#FFE0EA","body":"<path d=\"M32 32 L17 59 M32 32 L47 59\" stroke=\"#5B6577\" stroke-width=\"3.4\" stroke-linecap=\"round\"/><circle cx=\"32\" cy=\"29\" r=\"20\" fill=\"none\" stroke=\"#E4574D\" stroke-width=\"3\"/><path d=\"M32 9 V49 M12 29 H52 M18 15 L46 43 M46 15 L18 43\" stroke=\"#E4574D\" stroke-width=\"1.5\"/><circle cx=\"52\" cy=\"29\" r=\"3.8\" fill=\"#FFD25A\"/><circle cx=\"46\" cy=\"43\" r=\"3.8\" fill=\"#3B6FD8\"/><circle cx=\"32\" cy=\"49\" r=\"3.8\" fill=\"#FFD25A\"/><circle cx=\"18\" cy=\"43\" r=\"3.8\" fill=\"#3B6FD8\"/><circle cx=\"12\" cy=\"29\" r=\"3.8\" fill=\"#FFD25A\"/><circle cx=\"18\" cy=\"15\" r=\"3.8\" fill=\"#3B6FD8\"/><circle cx=\"32\" cy=\"9\" r=\"3.8\" fill=\"#FFD25A\"/><circle cx=\"46\" cy=\"15\" r=\"3.8\" fill=\"#3B6FD8\"/><circle cx=\"32\" cy=\"29\" r=\"3.2\" fill=\"#2B2B3A\"/><rect x=\"0\" y=\"58\" width=\"64\" height=\"6\" fill=\"#7BC46A\"/>"},{"bg":"#E4F0FF","body":"<rect x=\"14\" y=\"5\" width=\"36\" height=\"54\" rx=\"7\" fill=\"#F59E3B\"/><rect x=\"19\" y=\"10\" width=\"26\" height=\"23\" rx=\"3\" fill=\"#2B2B3A\"/><rect x=\"21\" y=\"12\" width=\"22\" height=\"19\" fill=\"#B9D38C\"/><rect x=\"25\" y=\"25\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"29\" y=\"25\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"33\" y=\"25\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"37\" y=\"25\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"29\" y=\"21\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"25\" y=\"16\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><rect x=\"25\" y=\"20\" width=\"4\" height=\"4\" fill=\"#3A4A2A\"/><path d=\"M26 40 h4 v4 h4 v4 h-4 v4 h-4 v-4 h-4 v-4 h4 z\" fill=\"#2B2B3A\"/><circle cx=\"40\" cy=\"44\" r=\"3.6\" fill=\"#E4574D\"/><circle cx=\"45\" cy=\"50\" r=\"3.6\" fill=\"#E4574D\"/>"},{"bg":"#FFE1E1","body":"<circle cx=\"32\" cy=\"32\" r=\"25\" fill=\"#F2766B\"/><path d=\"M19 17 L28 11 Q32 17 36 11 L45 17 L53 28 L47 34 L43 30 V57 H21 V30 L17 34 L11 28 Z\" fill=\"#fff\" stroke=\"#E4574D\" stroke-width=\"2\"/><path d=\"M32 17 V35\" stroke=\"#E4574D\" stroke-width=\"2\"/><circle cx=\"32\" cy=\"23\" r=\"1.5\" fill=\"#E4574D\"/><circle cx=\"32\" cy=\"29\" r=\"1.5\" fill=\"#E4574D\"/><path d=\"M21 50 H43\" stroke=\"#E4574D\" stroke-width=\"3\"/><path d=\"M24 45 l2 2 l2 -2 l2 2 l2 -2 l2 2 l2 -2 l2 2 l2 -2\" stroke=\"#E4574D\" stroke-width=\"1.4\" fill=\"none\"/>"}];
+  var ITEM_TEXT = [];
+  SECTIONS.forEach(function (s) { s.items.forEach(function (t) { ITEM_TEXT.push(t); }); });
+  var CAP_DEFAULT = 'যেকোনো ছবিতে ট্যাপ করলে রঙ ফিরে আসবে আর নিচে লেখা আসবে কোন স্মৃতি। একই কাজ নিচের তালিকা থেকেও করা যায়।';
+
+  function build() {
+    var sheet = $('sheet');
+    SECTIONS.forEach(function (sec, si) {
+      var s = document.createElement('section');
+      s.className = 'sec';
+      var h = document.createElement('h2');
+      var nm = document.createElement('span'); nm.textContent = sec.name;
+      var mk = document.createElement('span'); mk.className = 'mark';
+      h.appendChild(nm); h.appendChild(mk); s.appendChild(h);
+      marks.push(mk);
+      var ul = document.createElement('ul'); ul.className = 'items';
+      sec.items.forEach(function (text, ii) {
+        var idx = si * PER + ii;
+        var li = document.createElement('li');
+        var lab = document.createElement('label'); lab.className = 'item';
+        var cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = 'it' + idx; cb.checked = checked[idx];
+        cb.addEventListener('change', function () { setItem(idx, cb.checked); });
+        var sp = document.createElement('span'); sp.className = 'txt'; sp.textContent = text;
+        lab.appendChild(cb); lab.appendChild(sp); li.appendChild(lab); ul.appendChild(li);
+        boxes.push(cb);
+      });
+      s.appendChild(ul);
+      sheet.appendChild(s);
+    });
+  }
+
+  function buildAlbum() {
+    var grid = $('agrid');
+    ICONS.forEach(function (ic, idx) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tile';
+      b.setAttribute('aria-pressed', checked[idx] ? 'true' : 'false');
+      b.setAttribute('aria-label', ITEM_TEXT[idx]);
+      b.innerHTML = '<svg viewBox="0 0 64 64" aria-hidden="true"><g clip-path="url(#tile)"><rect width="64" height="64" fill="' + ic.bg + '"/>' + ic.body + '</g></svg>';
+      b.addEventListener('click', function () { setItem(idx, !checked[idx]); });
+      grid.appendChild(b);
+      tiles.push(b);
+    });
+    $('albumCap').textContent = CAP_DEFAULT;
+  }
+
+  function setItem(idx, val) {
+    $('cardBox').hidden = true;
+    checked[idx] = val;
+    boxes[idx].checked = val;
+    var t = tiles[idx];
+    t.setAttribute('aria-pressed', val ? 'true' : 'false');
+    if (val) { t.classList.remove('pop'); void t.offsetWidth; t.classList.add('pop'); }
+    $('albumCap').textContent = ITEM_TEXT[idx] + (val ? ' (মনে আছে)' : ' (টিক নেই)');
+    update();
+  }
+
+  function update() {
+    var total = 0, rows = $('rRows');
+    rows.innerHTML = '';
+    SECTIONS.forEach(function (sec, si) {
+      var c = 0;
+      for (var k = 0; k < PER; k++) if (checked[si * PER + k]) c++;
+      total += c;
+      marks[si].textContent = bn(c) + '/' + bn(PER);
+      var tr = document.createElement('tr');
+      var a = document.createElement('td'); a.textContent = sec.name;
+      var b = document.createElement('td'); b.textContent = bn(c) + ' / ' + bn(PER);
+      tr.appendChild(a); tr.appendChild(b); rows.appendChild(tr);
+    });
+    var g = gradeFor(total);
+    $('count').textContent = bn(total) + ' / ' + bn(TOTAL);
+    $('albumCount').textContent = bn(total) + ' / ' + bn(TOTAL) + ' রঙিন';
+    $('fill').style.width = Math.round(total / TOTAL * 100) + '%';
+    $('rTotal').textContent = bn(total) + ' / ' + bn(TOTAL);
+    $('stamp').innerHTML = '';
+    var box = document.createElement('div');
+    box.textContent = g.g;
+    var sm = document.createElement('small'); sm.textContent = 'জিপিএ ' + bn(g.gpa);
+    box.appendChild(sm);
+    $('stamp').appendChild(box);
+    $('rRemark').textContent = g.note;
+    var lines = SECTIONS.map(function (sec, si) {
+      var s = '';
+      for (var k = 0; k < PER; k++) s += checked[si * PER + k] ? '🟨' : '⬜';
+      return s;
+    });
+    shareText = 'আমার ৯০ এর শিশু অ্যালবাম: ' + bn(total) + '/' + bn(TOTAL) + ', গ্রেড ' + g.g + ' (জিপিএ ' + bn(g.gpa) + ')\n' + lines.join('\n') + '\nতুমি কত পাবে?';
+    try { localStorage.setItem(KEY, checked.map(function (v) { return v ? '1' : '0'; }).join('')); } catch (e) {}
+  }
+
+  /* ---------- Share card image (1080 x 1350) ---------- */
+  var lastCanvas = null;
+
+  function stats() {
+    var total = 0, counts = [];
+    SECTIONS.forEach(function (sec, si) {
+      var c = 0;
+      for (var k = 0; k < PER; k++) if (checked[si * PER + k]) c++;
+      counts.push(c); total += c;
+    });
+    return { total: total, counts: counts, g: gradeFor(total) };
+  }
+
+  function iconSrc(ic, gray) {
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="200" height="200"><defs>' +
+      '<clipPath id="tile"><rect x="1" y="1" width="62" height="62" rx="14"/></clipPath>' +
+      '<filter id="g"><feColorMatrix type="saturate" values="0"/></filter></defs>' +
+      '<g clip-path="url(#tile)"' + (gray ? ' filter="url(#g)" opacity=".3"' : '') + '>' +
+      '<rect width="64" height="64" fill="' + ic.bg + '"/>' + ic.body + '</g></svg>');
+  }
+
+  function loadImg(src) {
+    return new Promise(function (resolve) {
+      var im = new Image();
+      im.onload = function () { resolve(im); };
+      im.onerror = function () { resolve(null); };
+      im.src = src;
+    });
+  }
+
+  function fontsReady(sample) {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    return Promise.all([
+      document.fonts.load('700 100px Atma', sample),
+      document.fonts.load('500 40px Atma', sample),
+      document.fonts.load('600 34px "Hind Siliguri"', sample),
+      document.fonts.load('500 34px "Hind Siliguri"', sample)
+    ]).catch(function () {});
+  }
+
+  function wrapLines(c, text, maxW, maxLines) {
+    var words = text.split(' '), lines = [], cur = '';
+    words.forEach(function (w) {
+      var t = cur ? cur + ' ' + w : w;
+      if (c.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else { cur = t; }
+    });
+    if (cur) lines.push(cur);
+    return lines.slice(0, maxLines);
+  }
+
+  function buildCard() {
+    var st = stats();
+    var sample = '০১২৩৪৫৬৭৮৯ /৯০ এর শিশু প্রগতি পত্র স্মৃতির খাতা চেকলিস্ট মোট রঙিন স্মৃতি জিপিএ শ্রেণি শিক্ষকের মন্তব্য A+-BCDF.' +
+      SECTIONS.map(function (s) { return s.name; }).join(' ') + st.g.note;
+    return fontsReady(sample).then(function () {
+      return Promise.all(ICONS.map(function (ic, i) { return loadImg(iconSrc(ic, !checked[i])); }));
+    }).then(function (imgs) {
+      var cv = document.createElement('canvas');
+      cv.width = 1080; cv.height = 1350;
+      var c = cv.getContext('2d');
+      var DISP = 'Atma, "Hind Siliguri", sans-serif', BODY = '"Hind Siliguri", "Noto Sans Bengali", sans-serif';
+      function txt(s, x, y, font, color, align) {
+        c.font = font; c.fillStyle = color; c.textAlign = align || 'left'; c.textBaseline = 'alphabetic';
+        c.fillText(s, x, y);
+      }
+      // notebook paper: ruled lines and red margin
+      c.fillStyle = '#FDFEFF'; c.fillRect(0, 0, 1080, 1350);
+      c.strokeStyle = '#DCE6F5'; c.lineWidth = 2;
+      for (var y = 310; y < 1350; y += 52) { c.beginPath(); c.moveTo(0, y); c.lineTo(1080, y); c.stroke(); }
+      c.strokeStyle = '#E4574D'; c.lineWidth = 3;
+      c.beginPath(); c.moveTo(74, 0); c.lineTo(74, 1350); c.stroke();
+
+      // header
+      txt('স্মৃতির খাতা · ৯০ এর শিশু চেকলিস্ট', 110, 92, '600 30px ' + BODY, '#55658A');
+      txt('৯০ এর শিশু', 110, 222, '700 118px ' + DISP, '#1A2B52');
+      txt('প্রগতি পত্র', 110, 290, '500 56px ' + DISP, '#E4574D');
+      txt(bn(st.total) + ' / ' + bn(TOTAL), 1010, 222, '700 62px ' + DISP, '#1A2B52', 'right');
+      txt('রঙিন স্মৃতি', 1010, 268, '500 30px ' + BODY, '#55658A', 'right');
+
+      // album: 8 x 5, grey until ticked
+      imgs.forEach(function (im, i) {
+        if (im) c.drawImage(im, 110 + (i % 8) * 110, 330 + Math.floor(i / 8) * 110, 100, 100);
+      });
+
+      // marks table
+      SECTIONS.forEach(function (sec, si) {
+        var ty = 925 + si * 48;
+        txt(sec.name, 110, ty, '600 34px ' + BODY, '#1A2B52');
+        txt(bn(st.counts[si]) + ' / ' + bn(PER), 640, ty, '500 34px ' + BODY, '#1A2B52', 'right');
+        c.strokeStyle = '#C3D6EE'; c.lineWidth = 2;
+        c.beginPath(); c.moveTo(110, ty + 14); c.lineTo(640, ty + 14); c.stroke();
+      });
+      c.strokeStyle = '#1A2B52'; c.lineWidth = 3;
+      c.beginPath(); c.moveTo(110, 1140); c.lineTo(640, 1140); c.stroke();
+      txt('মোট', 110, 1186, '600 40px ' + BODY, '#1A2B52');
+      txt(bn(st.total) + ' / ' + bn(TOTAL), 640, 1186, '600 40px ' + BODY, '#1A2B52', 'right');
+
+      // grade stamp
+      c.save();
+      c.translate(850, 1050); c.rotate(-9 * Math.PI / 180);
+      c.strokeStyle = '#E4574D'; c.lineWidth = 10;
+      c.beginPath(); c.arc(0, 0, 100, 0, Math.PI * 2); c.stroke();
+      txt(st.g.g, 0, 22, '700 100px ' + DISP, '#E4574D', 'center');
+      txt('জিপিএ ' + bn(st.g.gpa), 0, 66, '600 28px ' + BODY, '#E4574D', 'center');
+      c.restore();
+
+      // teacher's remark
+      txt('শ্রেণি শিক্ষকের মন্তব্য', 110, 1240, '600 26px ' + BODY, '#55658A');
+      c.font = '500 34px ' + BODY;
+      wrapLines(c, st.g.note, 860, 2).forEach(function (line, li) {
+        txt(line, 110, 1284 + li * 42, '500 34px ' + BODY, '#1A2B52');
+      });
+      return cv;
+    });
+  }
+
+  function saveBlob(blob, name) {
+    var status = $('status');
+    var cl = window.claude;
+    var p = (cl && cl.use) ? cl.use('downloads') : Promise.resolve(null);
+    p.then(function (dl) {
+      if (dl) {
+        return dl.save({ filename: name, data: blob }).then(function () {
+          status.textContent = 'ছবি সেভ হয়েছে।';
+        }, function (err) {
+          status.textContent = (err && err.code === 'declined') ? 'সেভ বাতিল হয়েছে।' : 'এখানে ডাউনলোড চলছে না। ছবিটা চেপে ধরে সেভ করো।';
+        });
+      }
+      var a = document.createElement('a');
+      var url = URL.createObjectURL(blob);
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+      status.textContent = 'ডাউনলোড শুরু হয়েছে।';
+    }).catch(function () {
+      status.textContent = 'ডাউনলোড চলছে না। ছবিটা চেপে ধরে সেভ করো।';
+    });
+  }
+
+  function download(type) {
+    if (!lastCanvas) return;
+    var jpg = type === 'jpg';
+    lastCanvas.toBlob(function (blob) {
+      if (!blob) { $('status').textContent = 'ছবি বানানো যায়নি, আবার চেষ্টা করো।'; return; }
+      saveBlob(blob, '90er-shishu-progoti-potro.' + type);
+    }, jpg ? 'image/jpeg' : 'image/png', 0.92);
+  }
+
+  function fallbackCopy() {
+    var ta = $('shareOut');
+    ta.value = shareText; ta.hidden = false; ta.focus(); ta.select();
+    $('status').textContent = 'লেখাটি নির্বাচন করা হয়েছে, এবার কপি করো।';
+  }
+
+  $('copyBtn').addEventListener('click', function () {
+    try {
+      navigator.clipboard.writeText(shareText).then(function () {
+        $('status').textContent = 'কপি হয়েছে। এবার বন্ধুদের পাঠাও।';
+      }, fallbackCopy);
+    } catch (e) { fallbackCopy(); }
+  });
+
+  var armed = false, timer = null;
+  $('resetBtn').addEventListener('click', function () {
+    var btn = $('resetBtn');
+    if (!armed) {
+      armed = true; btn.textContent = 'নিশ্চিত? আবার চাপো';
+      timer = setTimeout(function () { armed = false; btn.textContent = 'সব মুছে নতুন করে'; }, 3000);
+      return;
+    }
+    clearTimeout(timer); armed = false; btn.textContent = 'সব মুছে নতুন করে';
+    for (var i = 0; i < TOTAL; i++) { checked[i] = false; boxes[i].checked = false; tiles[i].setAttribute('aria-pressed', 'false'); }
+    $('albumCap').textContent = CAP_DEFAULT;
+    $('cardBox').hidden = true;
+    $('status').textContent = ''; $('shareOut').hidden = true;
+    update();
+    window.scrollTo(0, 0);
+  });
+
+  $('makeCardBtn').addEventListener('click', function () {
+    $('status').textContent = 'ছবি বানানো হচ্ছে…';
+    buildCard().then(function (cv) {
+      lastCanvas = cv;
+      $('cardImg').src = cv.toDataURL('image/png');
+      $('cardBox').hidden = false;
+      $('status').textContent = 'ছবি তৈরি। নিচে থেকে ডাউনলোড করো।';
+      $('cardBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }).catch(function () {
+      $('status').textContent = 'ছবি বানানো যায়নি, আবার চেষ্টা করো।';
+    });
+  });
+  $('dlPng').addEventListener('click', function () { download('png'); });
+  $('dlJpg').addEventListener('click', function () { download('jpg'); });
+
+  $('jumpBtn').addEventListener('click', function () {
+    $('report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  build();
+  buildAlbum();
+  update();
+})();
+</script>
+
+</body></html>
